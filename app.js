@@ -18,7 +18,6 @@ var pikePlaceMarket = {
   averagePoundsMethod: function() {
     return this.averagePounds * this.randomCust;
   }
-
   //totalBeansNeeded: function() {
   //  return cupsPerHour + poundsPerHour;
 //  }
