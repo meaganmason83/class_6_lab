@@ -11,7 +11,7 @@ var pikePlaceMarket = {
   randomCustomerMethod: function() {
     this.randomCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     return this.randomCust;
-    randomCust.push();
+    //randomCust.push();
   },
   averageCupsMethod: function() {
     return this.averageCups * this.randomCust;
