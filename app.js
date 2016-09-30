@@ -9,7 +9,7 @@ var pikePlaceMarket = {
   minCust: 14,
   maxCust: 35,
   averageCups: 1.2,
-  averagePounds: .34,
+  averagePounds: 0.34,
   hours: ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'],
   custPerHour: [],
   custPerDay: 0,
@@ -49,6 +49,13 @@ var pikePlaceMarket = {
     }
   },
 
+  generateLbsData: function() {
+    for (var i = 0; i < this.hours.length; i++) {
+      this.lbsPerHour.push(this.custPerHour[i] * this.averagePounds);
+      this.lbsPerDay += this.lbsPerHour[i];
+  }
+},
+
   generateCupsLbsData: function() {
     for (var i = 0; i < this.hours.length; i++) {
       this.cupsToLbs.push(this.cupsPerHour[i] / 16);
@@ -60,15 +67,8 @@ var pikePlaceMarket = {
       this.cupsPlusLbs.push(this.cupsToLbs[i] + this.lbsPerHour[i]);
     }
   },
-  generateLbsData: function() {
-    for (var i = 0; i < this.hours.length; i++) {
-      this.lbsPerHour.push(this.custPerHour[i] * this.averagePounds);
-      this.lbsPerDay += this.lbsPerHour[i];
-    }
-  },
 
   generateBeansData: function() {
-    //for (var i = 0; i < this.hours.length; i++) {
     this.totalBeansPerDay = this.cupsPerDay + this.lbsPerDay;
   },
 
@@ -83,8 +83,8 @@ var pikePlaceMarket = {
 pikePlaceMarket.generateCustomerData();
 pikePlaceMarket.generateTotalCustomers();
 pikePlaceMarket.generateCupsData();
+pikePlaceMarket.generateLbsData();
 pikePlaceMarket.generateCupsLbsData();
 pikePlaceMarket.generateCupsPlusLbsData();
-pikePlaceMarket.generateLbsData();
 pikePlaceMarket.generateBeansData();
 pikePlaceMarket.generateEmployeeData();
