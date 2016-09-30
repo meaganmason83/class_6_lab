@@ -88,3 +88,22 @@ pikePlaceMarket.generateCupsLbsData();
 pikePlaceMarket.generateCupsPlusLbsData();
 pikePlaceMarket.generateBeansData();
 pikePlaceMarket.generateEmployeeData();
+
+//D.O.M
+var parent = document.getElementById('parentElement');
+var child = document.createElement('p');
+child.textContent = 'Some words we want in our p element';
+parent.appendChild(child);
+
+// //Inserting table
+// var tableEl = document.getElementById('new-table');
+//
+// function myRow(obj) {
+//   var rowEl = document.createElement('tr');
+//   var blankCell = document.createElement('td');
+//   blankCell.textContent = objblank;
+//   rowEl.appendChild(blankCell);
+//   //Add all your cells
+//   tableEl.appendChild(rowEl);
+// }
+// myRow();

@@ -29,3 +29,11 @@ p {
   color: brown;
   font-size: 15px;
 }
+
+table {
+  margin-top: 1em;
+}
+
+th, td {
+  padding:0.3em;
+}
