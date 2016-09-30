@@ -97,12 +97,13 @@ parent.appendChild(child);
 
 //Adding ul
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'];
-//var hoursEl = document.getElementById('hours');
+var hoursEl = document.getElementById('hours');
 var ulEl = document.createElement('ul');
 var liEl = document.createElement('li');
   liEl.textContent = hours;
   ulEl.appendChild(liEl);
-  //hoursEl.appendChild(ulEl);
+  hoursEl.appendChild(ulEl);
+
 
 // //Inserting table
 // var tableEl = document.getElementById('new-table');
