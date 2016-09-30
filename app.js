@@ -1,20 +1,29 @@
 'use strict';
 
+var round = function(num, prec){
+  return parseFloat(num.toFixed(prec));
+};
+
 var pikePlaceMarket = {
   location: 'Pike Place Market',
   minCust: 14,
   maxCust: 35,
   averageCups: 1.2,
   averagePounds: .34,
-  hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm'],
+  hours: ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'],
   custPerHour: [],
   custPerDay: 0,
+  totalCust: null,
   cupsPerHour: [],
   cupsPerDay: 0,
+  cupsToLbs: [],
+  cupsPlusLbs: [],
   lbsPerHour: [],
   lbsPerDay: 0,
+  totalBeansPerDay: 0,
   employeesPerHour: [],
   employeesPerDay: 0,
+  strings: [],
 
   getRandomCustomer: function(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -27,6 +36,12 @@ var pikePlaceMarket = {
     }
   },
 
+  generateTotalCustomers: function() {
+    for (var i = 0; i < this.hours.length; i++) {
+      this.totalCust += this.custPerHour[i];
+    }
+  },
+
   generateCupsData: function() {
     for (var i = 0; i < this.hours.length; i++) {
       this.cupsPerHour.push(this.custPerHour[i] * this.averageCups);
@@ -34,11 +49,27 @@ var pikePlaceMarket = {
     }
   },
 
+  generateCupsLbsData: function() {
+    for (var i = 0; i < this.hours.length; i++) {
+      this.cupsToLbs.push(this.cupsPerHour[i] / 16);
+  }
+},
+
+  generateCupsPlusLbsData: function() {
+    for (var i = 0; i < this.hours.length; i++) {
+      this.cupsPlusLbs.push(this.cupsToLbs[i] + this.lbsPerHour[i]);
+    }
+  },
   generateLbsData: function() {
     for (var i = 0; i < this.hours.length; i++) {
       this.lbsPerHour.push(this.custPerHour[i] * this.averagePounds);
       this.lbsPerDay += this.lbsPerHour[i];
     }
+  },
+
+  generateBeansData: function() {
+    //for (var i = 0; i < this.hours.length; i++) {
+    this.totalBeansPerDay = this.cupsPerDay + this.lbsPerDay;
   },
 
   generateEmployeeData: function() {
@@ -47,30 +78,13 @@ var pikePlaceMarket = {
       this.employeesPerDay += this.employeesPerHour[i];
     }
   }
-
-  // averageCupsMethod: function() {
-  //   return this.averageCups * this.randomCust;
-  // },
-  // averagePoundsMethod: function() {
-  //   return this.averagePounds * this.randomCust;
-  // },
-  // totalCupsMethod: function() {
-  //   console.log('Total cups sold at Pike Place Market: ' + (this.averageCups * this.randomCust)) * 16;
-  // },
-  // totalPoundsMethod: function() {
-  //   console.log('Total to-go pound packages sold at Pike Place Market: ' + (this.averagePounds * this.randomCust)) * 16;
-  // },
-  // totalCustomerMethod: function() {
-  //   console.log('Total customers at Pike Place Market: ' + (this.maxCust - this.minCust)) * 16;
-  // },
-  // totalBeansMethod: function() {
-  //   console.log('Total pounds of beans needed at Pike Place Market: ' + (this.averageCups + this.averagePounds) * (this.maxCust - this.minCust)) * 16;
-  // }
-  //I still need a method for total employees needed.
-  //I'm stuck on how to print out my methods for a given hour (ie "6:00am: 86.4 lbs [23 customers, 27.6 cups (1.4 lbs), 85 lbs to-go]")
 };
 
 pikePlaceMarket.generateCustomerData();
+pikePlaceMarket.generateTotalCustomers();
 pikePlaceMarket.generateCupsData();
+pikePlaceMarket.generateCupsLbsData();
+pikePlaceMarket.generateCupsPlusLbsData();
 pikePlaceMarket.generateLbsData();
+pikePlaceMarket.generateBeansData();
 pikePlaceMarket.generateEmployeeData();
