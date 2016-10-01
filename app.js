@@ -105,7 +105,7 @@ var pikePlace = {
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
     this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
     this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
-    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1));//can't figure this out
+    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
 
@@ -209,7 +209,7 @@ var capHill = {
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
     this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
     this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
-    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1));//can't figure this out
+    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
 
@@ -313,7 +313,7 @@ var seaLibrary = {
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
     this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
     this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
-    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1));//can't figure this out
+    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
 
@@ -417,7 +417,7 @@ var southLakeUnion = {
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
     this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
     this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
-    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1));//can't figure this out
+    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
 
@@ -521,7 +521,7 @@ var seaTacAirport = {
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
     this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
     this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
-    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1));//can't figure this out
+    this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
 
