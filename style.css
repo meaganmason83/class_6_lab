@@ -1,6 +1,10 @@
 body {
   background-color: #8DE0A6;
 }
+
+img {
+  padding-top: 100px;
+}
 .pic1 {
   display: block;
   margin-left: auto;
