@@ -20,6 +20,7 @@ var pikePlaceMarket = {
   cupsPlusLbs: [],
   lbsPerHour: [],
   lbsPerDay: 0,
+  totalBeansPerHour: [],
   totalBeansPerDay: 0,
   employeesPerHour: [],
   employeesPerDay: 0,
@@ -72,7 +73,10 @@ var pikePlaceMarket = {
   },
 
   generateBeansData: function() {
-    this.totalBeansPerDay = this.cupsPerDay + this.lbsPerDay;
+    for (var i = 0; i < this.hours.length; i++) {
+      this.totalBeansPerHour.push(this.cupsToLbs[i] + this.lbsPerHour[i]);
+      this.totalBeansPerDay = this.cupsPerDay + this.lbsPerDay;
+    }
   },
 
   generateEmployeeData: function() {
