@@ -100,11 +100,11 @@ var pikePlace = {
 
   generateStringsForDOM: function() {
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.round(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.round(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
+      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.ceil(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.ceil(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
     }
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
-    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
-    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
+    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.ceil(this.cupsPerDay, 1));
+    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.ceil(this.poundsPerDay, 1)); //can't figure this out
     this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
@@ -204,11 +204,11 @@ var capHill = {
 
   generateStringsForDOM: function() {
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.round(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.round(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
+      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.ceil(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.ceil(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
     }
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
-    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
-    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
+    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.ceil(this.cupsPerDay, 1));
+    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.ceil(this.poundsPerDay, 1)); //can't figure this out
     this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
@@ -308,11 +308,11 @@ var seaLibrary = {
 
   generateStringsForDOM: function() {
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.round(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.round(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
+      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.ceil(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.ceil(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
     }
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
-    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
-    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
+    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.ceil(this.cupsPerDay, 1));
+    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.ceil(this.poundsPerDay, 1)); //can't figure this out
     this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
@@ -412,11 +412,11 @@ var southLakeUnion = {
 
   generateStringsForDOM: function() {
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.round(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.round(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
+      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.ceil(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.ceil(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
     }
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
-    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
-    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
+    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.ceil(this.cupsPerDay, 1));
+    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.ceil(this.poundsPerDay, 1)); //can't figure this out
     this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
@@ -516,11 +516,11 @@ var seaTacAirport = {
 
   generateStringsForDOM: function() {
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.round(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.round(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
+      this.stringsForDOM.push(this.hoursOpen[i] + ': ' + Math.ceil(this.totalBeansPerHour[i], 1) + ' lbs [' + Math.ceil(this.customerPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsIntoPounds[i], 1) + ' lbs), ' + Math.round(this.poundsPerHour[i], 0) + ' lbs to-go]');
     }
     this.stringsForDOM.push('Total customers at ' + this.location + ': ' + this.totalCustomers);
-    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.round(this.cupsPerDay, 1));
-    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.round(this.poundsPerDay, 1)); //can't figure this out
+    this.stringsForDOM.push('Total cups sold at ' + this.location + ': ' + Math.ceil(this.cupsPerDay, 1));
+    this.stringsForDOM.push('Total to-go pound packages sold at ' + this.location + ': ' + Math.ceil(this.poundsPerDay, 1)); //can't figure this out
     this.stringsForDOM.push('Total pounds of beans needed at ' + this.location + ': ' + (this.poundsPerDay[i] + this.cupsIntoPounds[i]));//can't figure this out
   }
 };
