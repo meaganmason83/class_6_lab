@@ -23,7 +23,8 @@ var pikePlaceMarket = {
   totalBeansPerDay: 0,
   employeesPerHour: [],
   employeesPerDay: 0,
-  strings: [],
+  domLink: document.getElementById('pike'),
+  ulEl: document.createElement('ul'),
 
   getRandomCustomer: function(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -77,6 +78,10 @@ var pikePlaceMarket = {
       this.employeesPerHour.push(Math.ceil(this.custPerHour[i] / 30));
       this.employeesPerDay += this.employeesPerHour[i];
     }
+  },
+  generateDOMData: function() {
+    this.domLink.appendChild(this.ulEl);
+    console.log('domLink', this.domLink);
   }
 };
 
@@ -88,12 +93,13 @@ pikePlaceMarket.generateCupsLbsData();
 pikePlaceMarket.generateCupsPlusLbsData();
 pikePlaceMarket.generateBeansData();
 pikePlaceMarket.generateEmployeeData();
+pikePlaceMarket.generateDOMData();
 
 //D.O.M
-var parent = document.getElementById('parentElement');
-var child = document.createElement('p');
-child.textContent = 'Some words we want in our p element';
-parent.appendChild(child);
+// var parent = document.getElementById('parentElement');
+// var child = document.createElement('p');
+// child.textContent = 'Some words we want in our p element';
+// parent.appendChild(child);
 
 //Adding ul
 var hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm'];
@@ -103,7 +109,6 @@ var liEl = document.createElement('li');
   liEl.textContent = hours;
   ulEl.appendChild(liEl);
   hoursEl.appendChild(ulEl);
-
 
 // //Inserting table
 // var tableEl = document.getElementById('new-table');
