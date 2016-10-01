@@ -1,7 +1,7 @@
 'use strict';
 
-// var round = function(num, prec){
-//   return parseFloat(num.toFixed(prec));
+// var round = function(num, precision) {
+//   return parseFloat(num.toFixed(precision));
 // };
 
 var pikePlaceMarket = {
@@ -93,7 +93,7 @@ var pikePlaceMarket = {
 
   generateStringsForDOM: function() {
     for (var i = 0; i < this.hours.length; i++) {
-      this.stringsForDOM.push(this.hours[i] + ': ' + this.totalBeansPerDay[i] + ' lbs [' + this.custPerHour[i] + ' customers, ' + this.cupsPerHour[i] + ' cups (' + this.cupsToLbs[i] + ' lbs), ' + this.lbsPerHour[i] + ' lbs to-go]');
+      this.stringsForDOM.push(this.hours[i] + ': ' + Math.round(this.totalBeansPerDay[i], 1) + ' lbs [' + Math.round(this.custPerHour[i], 0) + ' customers, ' + Math.round(this.cupsPerHour[i], 1) + ' cups (' + Math.round(this.cupsToLbs[i], 1) + ' lbs), ' + Math.round(this.lbsPerHour[i], 0) + ' lbs to-go]');
     }
   }
 };
